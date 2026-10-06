@@ -23,6 +23,13 @@ culm cycles), hemp (annual, 90-120 days), algae (continuous, days-scale doubling
 shared property is the one the whole program leans on: **the factory regrows from its own
 compost, and the interest rate is photosynthesis.**
 
+The class has **two families**. The *biological* regrows in soil. The *atmospheric* regrows
+in the sky: **CIL diamond, grown from DAC CO2, is as replenishable as bamboo once the
+feedstock is defined as air** — the seam refills nightly. Its field is the PV array feeding
+the grow unit, its yield is kg per MW-year, and its grow-unit doctrine (smallest complete
+replicable unit -> replicate -> rack -> farmplex -> underground) is the AEFRI Seed Cell
+pattern applied to carbon.
+
 ## §II — ANCHOR LOOP: Cultivation-to-Regrowth
 
 ```
@@ -50,6 +57,11 @@ compost, and the interest rate is photosynthesis.**
      EoL: A reuse -> B regrind -> C chemical -> D energy -> COMPOST
                v
      CO2 -> BIOMASS -> back to SUN + SOIL   (the loop closes at the field)
+
+ ATMOSPHERIC FAMILY (parallel lane):
+   SKY (CO2 seam, refills nightly) -> DAC cartridge -> CH4 loop -> CVD grow unit
+   -> CIL diamond (permanent carbon) ; field = PV array ; yield = kg per MW-year
+   -> scale: replicate unit -> rack -> farmplex -> underground vault
 ```
 
 ## §III — REPLENISHABLE INVENTORY (registry-computed)
@@ -71,13 +83,15 @@ compost, and the interest rate is photosynthesis.**
 | `xerosil_feedstock` | XEROSIL Feedstock (Cape reeds + resurrection plants) | [BLUEPRINT] | annual wetland harvest | 5.0-12.0 t/ha/yr | -1.11 |
 | `straw_cellulose` | Straw / Waste Cellulose (residue stream) | [LITERATURE] | co-product of grain harvest | 3.0-6.0 t/ha/yr | -1.06 |
 | `algae_biopolymer` | Algae Biopolymer (photobioreactor grown) | [BLUEPRINT] | continuous (days-scale doubling) | 20.0-80.0 t/ha/yr | -1.04 |
+| `ETW` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | [SPEC [LITERATURE-ANCHORED]] | 3-8 yr SRWC rotation; glazing demand is panel-area-bound, not tonnage-bound | n/a | -0.99 |
 | `bioliquor` | Bioliquor (carbon growing medium) | [BLUEPRINT] | continuous mixing; cycles into biomass within one season | n/a | -0.21 |
 | `hempcrete` | Hempcrete (hemp hurd + lime binder) | [LITERATURE] | annual crop feedstock; cast-in-place or blocks | n/a | -0.20 |
 | `pla` | PLA (polylactic acid) | [LITERATURE] | crop-annual feedstock; industrial fermentation | n/a | +0.35 |
 | `spider_silk` | Spider-Silk Protein (fermentation route) | [UNVALIDATED] | fermentation days-scale | n/a | +0.50 |
 | `pha` | PHA (polyhydroxyalkanoate) | [LITERATURE] | crop-annual feedstock; industrial fermentation | n/a | +0.59 |
+| `cil_diamond` | CIL Diamond (CVD, atmospheric feedstock) | [SPEC] | continuous CVD deposition — the sky regrows the feedstock nightly | n/a | +16.85 |
 
-*20 replenishables registered; net CO2 computed by `efemat.simulate.lca` at renewable grid (0.02 kg/MJ), composition-weighted biogenic uptake, per-material permanence.*
+*22 replenishables registered; net CO2 computed by `efemat.simulate.lca` at renewable grid (0.02 kg/MJ), composition-weighted biogenic uptake, per-material permanence.*
 
 ## §IV — GENERATION & CULTIVATION PROCESSES (source)
 
@@ -92,6 +106,9 @@ compost, and the interest rate is photosynthesis.**
 | `algae_photobioreactor` | Algae Photobioreactor (vertical farm) | [BLUEPRINT] | 20-80 t/ha/yr dry (claims to 100+) | 2.0 MJ/kg |
 | `reed_harvest` | Cape Reed Harvest (dual-ecology wetland feedstock) | [BLUEPRINT] | 5-12 t/ha/yr annual harvest | 0.6 MJ/kg |
 | `rubber_plantation` | Natural Rubber Plantation (Hevea tapping) | [LITERATURE] | 1-2.5 t/ha/yr latex | 1.0 MJ/kg |
+| `greenhouse_farmplex` | Greenhouse Farmplex (stackable replicable grow modules) | [BLUEPRINT] | 2-5x field yield per greenhouse layer; N-floor stacking compresses footprint N-fold | 0.5-2.0 MJ/kg |
+| `aequcrop` | AEQUACROP — Three-Module Bio-Integrated CEA Platform | [OPTIBEST-CERTIFIED [CORPUS]] | passive-climate grow station; horizontal coverage: field, rooftop farm, greenhouse wall, living architecture | 5.0-40.0 MJ/kg |
+| `aequgrow` | AEQUIGROW v3.0 — Modular Vertical Aeroponic Farming System | [OPTIBEST-CERTIFIED [CORPUS] (9 cycles, CERTIFIED PREMIUM)] | 264-403 plants/m2 (vs 20-40 soil); conical tower = 3x yield/footprint vs flat shelves; aeroponics: 95% less water than soil, 40% less than DWC | 126.0-210.0 MJ/kg |
 
 **Cultivation signatures (key params):**
 
@@ -104,6 +121,9 @@ compost, and the interest rate is photosynthesis.**
 - **Algae Photobioreactor (vertical farm)** — doubling_time_days=[1, 3]; co2_enrichment=flue or DAC stream; continuous=True; carbon_fraction=0.5
 - **Cape Reed Harvest (dual-ecology wetland feedstock)** — cycle=annual; dual_ecology=clears invasive Acacia mearnsii -> fynbos restoration; carbon_fraction=0.45
 - **Natural Rubber Plantation (Hevea tapping)** — first_tap_yr=7; productive_life_yr=[25, 30]; carbon_fraction=0.84
+- **Greenhouse Farmplex (stackable replicable grow modules)** — module=single greenhouse = the smallest replicable unit; scaling=replicate -> stack -> farmplex; yield_uplift_x=[2, 5]; sites=['rooftop', 'vertical (LED)', 'F-zone sector', 'underground (algae)']; aefri_gate=indoor staples only after MEASURED kWh/kg (AEFRI v0.2 finding 3: AeroFarms/Bowery/Plenty failures on grid electricity)
+- **AEQUACROP — Three-Module Bio-Integrated CEA Platform** — module_a=GROW CORE — self-contained passively climate-controlled growing station (hydroponic/aquaponic circuit); module_b=BIO-CONVERTER — waste-to-biomaterial anaerobic digester (15 m2 floor plan); biomaterial output feeds AEQUFAB; module_c=HABITAT INTEGRATION — rooftop farm + greenhouse wall + living architecture + food processing station; scaling=1 unit -> household -> community -> global; interface-controlled (ICD: grow-core <-> bio-converter <-> habitat <-> AEQUFAB <-> AEQUAQUA); self_replication=bio-converter -> AEQUFAB interface: waste becomes biomaterial feedstock for fab-printed modules (infinitely self-replicable-esque, formally specified in the corpus ICD); sites=['field', 'rooftop', 'greenhouse wall', 'living architecture']; license=CC-BY-SA 4.0 / OSHWA-compliant open-source hardware; energy_note=passive climate control — pumps/sensors only; [MODELLED] until MEASURED (AEFRI gate); glazing_upgrade=Thanceln enhanced transparent wood [SPEC, LITERATURE-ANCHORED]: replaces recycled-PC double-wall glazing; >=85% PAR met (literature 85-90% transmittance); haze = diffuse light improves canopy uniformity; delignification lignin byproduct feeds DLGC lignin_resin stream (38% of DLGC); bio-resin infiltration closes the bio-loop; [MODELLED] until MEASURED panel prototypes
+- **AEQUIGROW v3.0 — Modular Vertical Aeroponic Farming System** — tower_footprint_m2=0.159; yield_density_plants_m2=[264, 403]; annual_yield_kg_tower=[15, 25]; water_l_day_tower=[2, 5]; net_water_loss_l_day=0.5; tiers=T1 Proto (commercially sustainable) -> T2 Advanced (mycelium insulation, +20-30% yield from root temp stability) -> T3 Apex (diamond/graphene, Carbon Infinity Loop closure); scaling=household 1-4 towers -> community 10-50 -> commercial node 100-500 -> global; sites=['indoor', 'vertical', 'rooftop']; license=CC-BY-SA | open-source; energy_note=derived: 100 W x 8760 h / 15-25 kg = 35-58 kWh/kg = 126-210 MJ/kg; [MODELLED] until MEASURED (AEFRI gate)
 
 **Dual ecologies:** cork montado (biodiversity hotspot, tree never felled) · Cape reeds
 (invasive-clearing -> fynbos restoration) · algae (CO2-sequestration feed) · straw (residue
@@ -120,6 +140,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `biochar_kiln_zero_emission` | Zero-Emission Biochar Kiln (pyrolysis) | [SPEC] | forest/agricultural biomass waste | biochar -> syngas -> process heat | 2.0-8.0 MJ/kg |
 | `lignin_recovery` | Lignin Recovery (biorefinery valorization) | [LITERATURE] | black liquor / biorefinery side-stream | lignin resin | 1.0-5.0 MJ/kg |
 | `bio_graphene_flash` | Flash Bio-Graphene (Joule-heating from biochar) | [BLUEPRINT] | biochar | bio-graphene (3-5% DLGC constituent) | 5.0-15.0 MJ/kg |
+| `cil_grow_unit` | CIL Grow Unit (smallest complete replicable diamond grower) | [BLUEPRINT] | atmospheric CO2 (DAC cartridge), water (electrolysis), renewable power (PV + molten-salt buffer) | CVD diamond -> DAC_CAPTURE credits (surplus) | 1026.0 MJ/kg |
 
 | id | manufacture process | status | inputs | outputs | energy |
 |---|---|---|---|---|---|
@@ -138,6 +159,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `bamboo` | Moso Bamboo (culm + fiber) | DLGC fiber feedstock; aequscaff bio-composite (85%); bamboo-Al Manufactory beams; CLT panels |
 | `biochar` | Biochar (stable pyrogenic carbon) | soil amendment (five economies keystone); composites additive (AEQUBLOCK); electrodes + catalysts; bio-graphene feedstock |
 | `bioliquor` | Bioliquor (carbon growing medium) | enhanced growing medium (Earth-circularity chain); nursery substrate for plantation establishment |
+| `cil_diamond` | CIL Diamond (CVD, atmospheric feedstock) | heat spreaders (aequphone, indefinite 40C); folded optics (1.2in sensor in 10mm); betavoltaic C-14 matrix; diamond semiconductors |
 | `clt_glulam` | CLT / Glulam (engineered timber) | aequcity CLT+steel hybrid structures; 200-yr design life buildings; mass-timber floors/walls |
 | `cork` | Cork (regenerating bark harvest) | cork composite shock-absorbing (M3.6); seals/gaskets; acoustic + thermal panels |
 | `dlgc` | DLGC (Densified Ligno-Cellulosic Graphene Composite) | aequvivum structural frames; Bio-Fuse joints; scaffold members; 100+ yr load-bearing structure |
@@ -153,6 +175,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `poplar_timber` | Poplar Timber (short-rotation coppice) | CLT/glulam feedstock; pulp + biorefiner lignin stream |
 | `spider_silk` | Spider-Silk Protein (fermentation route) | UMAGCONNEC pin guides (bamboo-fiber reinforced); high-toughness reinforcement tier |
 | `straw_cellulose` | Straw / Waste Cellulose (residue stream) | packed insulation (AEQUBLOCK T1); cellulose insulation (stream 8); cellulose acetate + nanofiber (Bio-Fuse); anaerobic digestion feed |
+| `ETW` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | AEQUACROP grow-core glazing (replaces recycled-PC double-wall panels, >=85% PAR); windows + skylights (aequcity building stock); solar-cell substrates (diffuse-light tolerant); diffuse-light luminaires + display substrates |
 | `xerosil_feedstock` | XEROSIL Feedstock (Cape reeds + resurrection plants) | XEROSIL-MATRIX petro-plastic replacement (75 MPa, self-healing); fungal-trigger biodegradation tier |
 
 ## §VII — SIMULATION RESULTS (computed at generation time)
@@ -176,6 +199,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `xerosil_feedstock` | replenishable | [BLUEPRINT] | 1.65 | 2.0 | -1.11 | -3.21 |
 | `straw_cellulose` | replenishable | [LITERATURE] | 1.54 | 1.0 | -1.06 | -3.16 |
 | `algae_biopolymer` | replenishable | [BLUEPRINT] | 1.83 | 3.0 | -1.04 | -3.14 |
+| `ETW` | replenishable | [SPEC [LITERATURE-ANCHORED]] | 1.65 | 16.5 | -0.99 | -3.09 |
 | `bioliquor` | replenishable | [BLUEPRINT] | 1.10 | 0.5 | -0.21 | -2.31 |
 | `hempcrete` | replenishable | [LITERATURE] | 0.00 | 4.0 | -0.20 | -2.30 |
 | `concrete_pcc` | baseline | [LITERATURE] | 0.00 | 1.1 | +0.12 | -1.98 |
@@ -188,6 +212,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `steel_virgin` | baseline | [LITERATURE] | 0.00 | 25.0 | +2.10 | +0.00 |
 | `pvc` | baseline | [LITERATURE] | 0.00 | 70.0 | +2.40 | +0.30 |
 | `aluminum_virgin` | baseline | [LITERATURE] | 0.00 | 200.0 | +12.00 | +9.90 |
+| `cil_diamond` | replenishable | [SPEC] | 3.67 | 1026.0 | +16.85 | +14.75 |
 
 *Grid: renewable-dedicated (0.02 kg CO2/MJ). Uptake: composition-weighted stoichiometry*
 *(C x 44/12) x permanence. Baselines: published literature overrides.*
@@ -225,6 +250,8 @@ valorization, zero new land). *The replenishable program buys restoration with i
 *honest scaling answer to 'can the fields feed the factory?' — and it corroborates the*
 *corpus risk ledger ('SA hemp emerging crop').*
 
+**Mix lever (computed):** an all-bamboo fiber mix needs **~28,141 ha — a 78% land reduction** — and bamboo grows on marginal land (no food competition).
+
 ### VII.e — Cost trajectory (EFE curve, DLGC)
 
 | year | multiplier vs baseline | cost |
@@ -245,6 +272,82 @@ valorization, zero new land). *The replenishable program buys restoration with i
 - steady-state virgin need: **172,500 t/yr** (15% of demand)
 - note: 95% secondary unreachable at this recovery — raise GREEN-stream A/B capture to >= 0.95
 
+### VII.g — The vertical question + the atmospheric family
+
+**Is the land floor real?** The hectares above are the *field* scenario at [LITERATURE] yield
+midpoints — MODELLED until MEASURED (AEFRI evidence classes). Three honest levers:
+
+1. **Mix lever:** all-bamboo fiber -> ~78% land reduction (computed in VII.d), on marginal land.
+2. **Farmplex lever — now a registered product pair [CORPUS, OPTIBEST-CERTIFIED]:**
+   **AEQUACROP** (3-module bio-integrated platform: grow-core + bio-converter + habitat
+   integration — field, rooftop, greenhouse wall, living architecture; passive climate;
+   waste->biomaterial->AEQUFAB self-replication loop) and **AEQUIGROW v3.0** (vertical
+   aeroponic tower: 264-403 plants/m2 vs 20-40 soil, 15-25 kg/tower/yr, <0.5 L/day net
+   water, 100 W PV/tower, T1->T3 material tiers closing into the CIL diamond family).
+   Stacking compresses *footprint* for food, algae and nursery crops — NOT for structural
+   fiber (20 m culms at 25 t/ha/yr are field agronomy). AEFRI v0.2's cautionary record
+   stands: AeroFarms, Bowery and Plenty failed on grid electricity; indoor staples only
+   after MEASURED kWh/kg (AEQUIGROW's 126-210 MJ/kg is [MODELLED] from the 100 W/tower
+   design spec). Under EFE free-energy the trade inverts — but the gate is measurement,
+   not thesis. Best fiber-adjacent farmplex use: bamboo nursery modules (propagation
+   stock shortens the 5-7 yr stand lead time).
+3. **Atmospheric lever:** the CIL grow unit needs no biological land at all — its field is the
+   PV array (below).
+
+**Farmplex demo (algae @ 100 kt/yr):** field-equivalent 2,353 ha -> 5-floor x 3x-uplift farmplex footprint **157 ha** (15x compression).
+
+**The atmospheric family — CIL diamond [SPEC-corpus, added this revision]:**
+
+- power ledger: **7,684 kg per MW-year**; 1 t/yr needs 0.13 MW nameplate (~0.20 ha PV); a 60-chamber facility (~50 t/yr) needs ~6.5 MW (~10 ha PV) — the grow unit's acreage is the solar field.
+- grid-sensitivity of the per-kg carbon sign (the 285 kWh/kg floor):
+
+| grid | kg CO2/MJ | g/kWh equiv | net CO2 kg/kg |
+|---|---|---|---|
+| world | 0.110 | 396 | +109.19 |
+| renewable | 0.020 | 72 | +16.85 |
+| efe | 0.005 | 18 | +1.46 |
+| zero | 0.000 | 0 | -3.67 |
+
+*Honest finding: per-kg, CVD diamond is carbon-POSITIVE above ~12.9 g/kWh grid intensity*
+*(3.667 kg CO2 uptake / 1026 MJ). The corpus's net-negative claim is FACILITY-level — DAC*
+*surplus beyond diamond demand flows to BIOCHAR_STORAGE credits. The diamond's climate value*
+*is geological permanence (carbon locked ~forever once made) plus material displacement,*
+*not per-kg sequestration.*
+
+**Grow-unit doctrine (Seed Cell pattern applied to carbon):** the smallest complete replicable
+unit = DAC cartridge + CH4 synthesis loop + 1 CVD chamber + salt-buffered PV + in-line QC +
+credits hook. Scale by replication -> racks -> farmplex -> underground vault (thermal mass,
+security, zero bio-land competition). *The sky is the field; the reactor is the furrow; the*
+*seed is CO2.*
+
+### VII.h — The calculators (one number in, the full ledger out)
+
+`python3 -m efemat calculate ledger|mix|scale` — the CALCULATORS | SCALABILITY framework:
+every resource for a demand figure, computed live from the registries.
+
+| resource | value @ Y12 target |
+|---|---|
+| land (registry 60/40 mix) | 129,449 ha |
+| mix lever (all_bamboo) | 28,141 ha (78% reduction) |
+| atmospheric power (5 t/yr diamond demo) | 0.65 MW, 0.98 ha PV |
+| carbon (renewable grid) | -1.94 kg/kg -> -2,229 kt CO2/yr |
+| loop steady-state virgin | 172,500 t/yr (recovery 0.85, tau 3 yr) |
+| cost (EFE curve) | $4.00/kg now -> $0.12/kg by year 20 |
+
+**Scaling path** (pilot 10 kt/yr -> 1,150,000 t/yr over 12 yr, geometric ramp):
+
+| yr | demand t/yr | land ha | virgin t/yr | $/kg | kt CO2/yr |
+|---|---|---|---|---|---|
+| 0 | 10,000 | 1,126 | 10,000 | 4.00 | -19 |
+| 2 | 22,052 | 2,482 | 12,931 | 3.40 | -43 |
+| 4 | 48,629 | 5,474 | 18,190 | 2.80 | -94 |
+| 6 | 107,238 | 12,071 | 28,422 | 2.25 | -208 |
+| 8 | 236,482 | 26,620 | 49,439 | 1.75 | -458 |
+| 10 | 521,493 | 58,702 | 94,037 | 1.25 | -1,011 |
+| 12 | 1,150,000 | 129,449 | 190,404 | 0.75 | -2,229 |
+
+**SCALABLE gate evidence:** 112.6 ha per kt/yr, constant across the 115x ramp (linear land scaling; `scalable_linear_land=True`). Cost falls with program year via the EFE learning curve, not with volume.
+
 ## §VIII — EFE EVALUATION (seven pillars, [SEED-ESTIMATE])
 
 | id | score | grade | strongest pillar | weakest pillar |
@@ -259,12 +362,14 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `hemp_fiber` | 86.0 | **A** | sustainable_materials | longevity |
 | `flax_fiber` | 85.0 | **A** | sustainable_materials | longevity |
 | `xerosil_feedstock` | 84.5 | **A** | sustainable_materials | longevity |
+| `cil_diamond` | 83.5 | **A** | sustainable_materials | renewable_energy |
 | `algae_biopolymer` | 82.5 | **A** | sustainable_materials | longevity |
 | `clt_glulam` | 82.0 | **A** | sustainable_materials | renewable_energy |
 | `bioliquor` | 82.0 | **A** | sustainable_materials | longevity |
 | `eucalyptus_timber` | 81.0 | **A** | sustainable_materials | renewable_energy |
 | `poplar_timber` | 80.0 | **A** | sustainable_materials | renewable_energy |
 | `straw_cellulose` | 80.0 | **A** | sustainable_materials | longevity |
+| `ETW` | 77.5 | **B** | sustainable_materials | renewable_energy |
 | `pha` | 71.5 | **B** | sustainable_materials | longevity |
 | `natural_rubber` | 69.5 | **C** | sustainable_materials | renewable_energy |
 | `spider_silk` | 69.0 | **C** | sustainable_materials | renewable_energy |
@@ -281,6 +386,8 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `cork` | 25-yr establishment patience (first harvest) | 4x3 | **HIGH** |
 | `pha` | cost premium vs PLA | 4x3 | **HIGH** |
 | `spider_silk` | industrial-scale production UNVALIDATED (corpus-flagged) | 4x3 | **HIGH** |
+| `cil_diamond` | 285 kWh/kg energy floor — a power program first (0.13 MW nameplate per t/yr) | 3x4 | **HIGH** |
+| `ETW` | delignification liquor stream must close (lignin -> DLGC resin feedstock, chemicals recovered) | 3x4 | **HIGH** |
 | `bamboo` | plantation lead time 5-7 yr | 3x3 | **MEDIUM** |
 | `eucalyptus_timber` | water demand must be sited responsibly | 3x3 | **MEDIUM** |
 | `clt_glulam` | building-code approval pathways | 3x3 | **MEDIUM** |
@@ -301,12 +408,12 @@ valorization, zero new land). *The replenishable program buys restoration with i
 
 ```json
 {"efemat_registry_summary": {
-  "materials": 27,
-  "replenishables": 20,
+  "materials": 29,
+  "replenishables": 22,
   "baselines": 7,
-  "processes": 22,
-  "cultivation": 9,
-  "generation": 7,
+  "processes": 26,
+  "cultivation": 12,
+  "generation": 8,
   "manufacture": 6,
   "validation_errors": 0
 }}
@@ -318,14 +425,17 @@ valorization, zero new land). *The replenishable program buys restoration with i
 
 ## §XI — CONCLUSION + RESIDUAL
 
-**Conclusion.** The replenishable class is the program's only self-refilling mine. At renewable
-grid, every registered replenishable is carbon-negative or near-neutral (best: `biochar` at
--2.23 kg CO2/kg), the DLGC flagship reproduces its corpus carbon spec within
-2% and its tensile spec within the declared factor model, and the Y12 global target of
-1,150,000 t/yr needs ~129,449 ha of cultivation — a solvable
-land problem with a known lever (bamboo-dominant fiber mix). The class's defining property is
-temporal: **cork teaches the 9-year patience, hemp the 100-day sprint, algae the daily doubling —
-and compost closes all three back to the field.**
+**Conclusion.** The replenishable class is the program's only self-refilling mine — in two
+families. The *biological* family (fields) is carbon-negative across the board at renewable
+grid (best: `biochar` at -2.23 kg CO2/kg). The *atmospheric* family
+(sky) trades per-kg carbon positivity for geological permanence — its honest ledger is the
+power ledger (~7,684 kg/MW-yr; ~0.20 ha PV per t/yr) and
+facility-level DAC surplus. The DLGC flagship reproduces its corpus carbon spec within 8% and
+its tensile spec within the declared factor model; the Y12 target of 1,150,000
+t/yr needs ~129,449 ha of field — or ~78% less bamboo-dominant — a solvable land problem
+with known levers. The class's defining property is temporal: **cork teaches the 9-year
+patience, hemp the 100-day sprint, algae the daily doubling, diamond the geological forever —
+and compost and sky close all four back to the start.**
 
 **Residual ledger (honest gaps):**
 
@@ -336,6 +446,10 @@ and compost closes all three back to the field.**
    yields are [LITERATURE] ranges from internal knowledge — re-verify when the surround is live.
 4. Spider-silk protein remains [UNVALIDATED] at industrial scale (corpus-flagged).
 5. Land model assumes flat yields; add climate-scenario yield deltas next revision.
+6. CIL diamond per-kg carbon sign is grid-dependent (positive above ~12.9 g/kWh); the
+   facility-level net-negativity claim is corpus [SPEC], not yet MEASURED.
+7. Farmplex stacking factors (2-5x uplift, N floors) are [BLUEPRINT]; AEFRI gate requires
+   MEASURED kWh/kg before indoor staples scale.
 
 ---
 
