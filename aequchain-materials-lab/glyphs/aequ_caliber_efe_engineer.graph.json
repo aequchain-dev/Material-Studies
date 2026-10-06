@@ -1,0 +1,322 @@
+{
+  "glyph": "aequ>CALIBER|EFE Engineer \u2014 capability graph",
+  "version": "1.0",
+  "date": "2026-10-06",
+  "encoding": "POINTS glyph, 8192 bytes, live in session slot 'main'; b64 is session-ephemeral \u2014 regenerate on demand: points_encode_graph_str(graph_spec=spec['graph_spec'])",
+  "edge_vocabulary": [
+    "ASSOCIATIVE",
+    "EQUIVALENCE",
+    "INSTANCE_OF",
+    "IS_A",
+    "PART_OF"
+  ],
+  "regenerate": "points_encode_graph_str(graph_spec=<entities+edges below>)",
+  "graph_spec": {
+    "entities": [
+      {
+        "id": "role",
+        "label": "aequ>CALIBER|EFE Engineer",
+        "type": "role",
+        "salience": 1
+      },
+      {
+        "id": "cap_study",
+        "label": "conduct studies",
+        "type": "capability"
+      },
+      {
+        "id": "cap_conceptualize",
+        "label": "conceptualize + ideate",
+        "type": "capability"
+      },
+      {
+        "id": "cap_design",
+        "label": "design",
+        "type": "capability"
+      },
+      {
+        "id": "cap_simulate",
+        "label": "simulate",
+        "type": "capability"
+      },
+      {
+        "id": "cap_calculate",
+        "label": "calculate",
+        "type": "capability"
+      },
+      {
+        "id": "cap_generate",
+        "label": "generate schematics + frameworks",
+        "type": "capability"
+      },
+      {
+        "id": "cap_audit",
+        "label": "audit + refine recursively",
+        "type": "capability"
+      },
+      {
+        "id": "cap_archive",
+        "label": "record to refined archive",
+        "type": "capability"
+      },
+      {
+        "id": "res_efemat",
+        "label": "aequchain-materials-lab (efemat): 28 materials, 26 processes, 34 tests",
+        "type": "resource"
+      },
+      {
+        "id": "res_skills",
+        "label": "skills-bank MCP: 282 skills, 0 unaudited, search->audit->human-confirm->promote",
+        "type": "resource"
+      },
+      {
+        "id": "res_memory",
+        "label": "memory slot aequchain/materials-program (additive-only)",
+        "type": "memory"
+      },
+      {
+        "id": "res_laya",
+        "label": "laya decision engine (route first, batch hard)",
+        "type": "resource"
+      },
+      {
+        "id": "res_vexl",
+        "label": "vexl-harness + vexl-points-reasoning (deliberation, glyphs)",
+        "type": "resource"
+      },
+      {
+        "id": "res_efe",
+        "label": "EFE Filter + OPTIBEST framework (7 pillars, 7 dimensions, plateau M1-M5)",
+        "type": "resource"
+      },
+      {
+        "id": "res_efe_docs",
+        "label": "EFE docs: blueprint, certificate, BOM, FMEA generators",
+        "type": "resource"
+      },
+      {
+        "id": "res_corpus",
+        "label": "aequchain corpus: devzone/engineering (1 USABLE, 2 CONSIDERATIONAL, 3 EXPLORATIONAL)",
+        "type": "resource"
+      },
+      {
+        "id": "prod_studies",
+        "label": "Material Flow Studies (9 + master index)",
+        "type": "product"
+      },
+      {
+        "id": "prod_aequcrop",
+        "label": "AEQUACROP: 3-module bio-integrated CEA platform (OPTIBEST-CERTIFIED)",
+        "type": "product"
+      },
+      {
+        "id": "prod_aequgrow",
+        "label": "AEQUIGROW v3.0: vertical aeroponic tower (OPTIBEST-CERTIFIED, 9 cycles)",
+        "type": "product"
+      },
+      {
+        "id": "prod_dlgc",
+        "label": "DLGC composite (calibrated flagship)",
+        "type": "product"
+      },
+      {
+        "id": "prod_cil",
+        "label": "CIL diamond (atmospheric family)",
+        "type": "product"
+      },
+      {
+        "id": "prod_frameworks",
+        "label": "frameworks + schematics + blueprints (detailed > generated > recorded)",
+        "type": "product"
+      },
+      {
+        "id": "proto_devpolicy",
+        "label": "DEV POLICY: extensible|modular|scriptable|programmable|scalable|reliable|robust|refined|replicable",
+        "type": "protocol"
+      },
+      {
+        "id": "proto_aefri",
+        "label": "AEFRI v0.2: MEASURED/MODELLED/ASSERTED evidence classes + Seed Cell pattern",
+        "type": "protocol"
+      },
+      {
+        "id": "proto_additive",
+        "label": "additive memory: append-only unless DEF ENHANCEMENT",
+        "type": "protocol"
+      },
+      {
+        "id": "proto_plateau",
+        "label": "plateau verification: refine until cannot-enhance-further, then conclude, then generate",
+        "type": "protocol"
+      }
+    ],
+    "edges": [
+      {
+        "from": "cap_study",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_conceptualize",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_design",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_simulate",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_calculate",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_generate",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_audit",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_archive",
+        "rel": "PART_OF",
+        "to": "role"
+      },
+      {
+        "from": "cap_study",
+        "rel": "ASSOCIATIVE",
+        "to": "res_corpus"
+      },
+      {
+        "from": "cap_study",
+        "rel": "ASSOCIATIVE",
+        "to": "res_efemat"
+      },
+      {
+        "from": "cap_conceptualize",
+        "rel": "ASSOCIATIVE",
+        "to": "res_laya"
+      },
+      {
+        "from": "cap_design",
+        "rel": "ASSOCIATIVE",
+        "to": "res_efe"
+      },
+      {
+        "from": "cap_simulate",
+        "rel": "ASSOCIATIVE",
+        "to": "res_efemat"
+      },
+      {
+        "from": "cap_calculate",
+        "rel": "ASSOCIATIVE",
+        "to": "res_efemat"
+      },
+      {
+        "from": "cap_generate",
+        "rel": "ASSOCIATIVE",
+        "to": "res_efe_docs"
+      },
+      {
+        "from": "cap_audit",
+        "rel": "ASSOCIATIVE",
+        "to": "res_vexl"
+      },
+      {
+        "from": "cap_audit",
+        "rel": "ASSOCIATIVE",
+        "to": "proto_plateau"
+      },
+      {
+        "from": "cap_archive",
+        "rel": "ASSOCIATIVE",
+        "to": "res_memory"
+      },
+      {
+        "from": "cap_archive",
+        "rel": "ASSOCIATIVE",
+        "to": "res_skills"
+      },
+      {
+        "from": "cap_study",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_studies"
+      },
+      {
+        "from": "cap_design",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_aequcrop"
+      },
+      {
+        "from": "cap_design",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_aequgrow"
+      },
+      {
+        "from": "cap_simulate",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_dlgc"
+      },
+      {
+        "from": "cap_generate",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_cil"
+      },
+      {
+        "from": "cap_generate",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_frameworks"
+      },
+      {
+        "from": "role",
+        "rel": "ASSOCIATIVE",
+        "to": "res_memory"
+      },
+      {
+        "from": "proto_devpolicy",
+        "rel": "ASSOCIATIVE",
+        "to": "role"
+      },
+      {
+        "from": "proto_aefri",
+        "rel": "ASSOCIATIVE",
+        "to": "cap_simulate"
+      },
+      {
+        "from": "proto_additive",
+        "rel": "ASSOCIATIVE",
+        "to": "res_memory"
+      },
+      {
+        "from": "proto_plateau",
+        "rel": "ASSOCIATIVE",
+        "to": "cap_audit"
+      },
+      {
+        "from": "prod_aequcrop",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_cil"
+      },
+      {
+        "from": "prod_aequgrow",
+        "rel": "ASSOCIATIVE",
+        "to": "prod_cil"
+      },
+      {
+        "from": "res_skills",
+        "rel": "ASSOCIATIVE",
+        "to": "role"
+      }
+    ]
+  },
+  "artifact_status": "spec JSON = durable source of truth (validated: 27 entities, 33 edges, no dangling refs); a hand-transcribed b64 file was attempted, caught truncated at verification (1753 != 8192 bytes), and removed per never-fabricate"
+}

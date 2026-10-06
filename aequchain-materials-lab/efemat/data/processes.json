@@ -1,0 +1,466 @@
+{
+  "version": "1.0",
+  "note": "Generation | cultivation | manufacture process registry — source unto application. Status tags: [SPEC] corpus-specified, [BLUEPRINT] corpus blueprint, [LITERATURE] published ranges, [UNVALIDATED] flagged. Energy is MJ per kg of main output (midpoint or [lo,hi]).",
+  "processes": [
+    {
+      "id": "bamboo_plantation",
+      "name": "Moso Bamboo Plantation (stand cultivation)",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["land", "water", "sunlight", "planting stock"],
+      "outputs": ["bamboo culm"],
+      "energy_mj_kg": 0.4,
+      "throughput": "20-30 t/ha/yr sustainable harvest at stand maturity",
+      "key_params": {
+        "culm_maturity_yr": [3, 5],
+        "stand_maturity_yr": [5, 7],
+        "planting_density_culms_ha": [800, 1200],
+        "carbon_fraction": 0.47,
+        "perennial": true
+      },
+      "efe_notes": "Perennial: no replanting, soil protection, annual selective harvest of mature culms only; stand persists for decades.",
+      "sources": ["literature", "aequcity.md"]
+    },
+    {
+      "id": "hemp_cultivation",
+      "name": "Industrial Hemp Cultivation (dual crop)",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["soil", "seed", "water", "sunlight"],
+      "outputs": ["hemp straw (bast fiber + hurd + seed)"],
+      "energy_mj_kg": 0.8,
+      "throughput": "8-12 t/ha dry straw per 100-120 day crop; fiber 2-3 t/ha; hurd 3-4 t/ha",
+      "key_params": {
+        "cycle_days": [90, 120],
+        "crops_per_year": [1, 2],
+        "fiber_t_ha": [2, 3],
+        "hurd_t_ha": [3, 4],
+        "carbon_fraction": 0.45
+      },
+      "efe_notes": "Fastest structural-fiber crop in the inventory; phytoremediation bonus; no pesticide requirement.",
+      "sources": ["literature", "aequcity.md"]
+    },
+    {
+      "id": "flax_cultivation",
+      "name": "Flax (Linseed) Cultivation",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["soil", "seed", "water", "sunlight"],
+      "outputs": ["flax straw (long fiber + shive)"],
+      "energy_mj_kg": 0.7,
+      "throughput": "4-7 t/ha straw per ~100 day crop; fiber 1-2 t/ha",
+      "key_params": {
+        "cycle_days": [95, 110],
+        "fiber_t_ha": [1, 2],
+        "carbon_fraction": 0.44
+      },
+      "efe_notes": "Temperate complement to hemp; linseed oil co-product feeds bio-polyol binders (aequscaff).",
+      "sources": ["literature", "aequscaff.md"]
+    },
+    {
+      "id": "eucalyptus_plantation",
+      "name": "Eucalyptus Plantation (managed rotation)",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["land", "water", "sunlight"],
+      "outputs": ["eucalyptus log"],
+      "energy_mj_kg": 0.6,
+      "throughput": "8-20 t/ha/yr",
+      "key_params": {
+        "rotation_yr": [7, 10],
+        "sawn_rotation_yr": [12, 15],
+        "carbon_fraction": 0.48
+      },
+      "efe_notes": "Fastest timber genus on record; water demand must be sited responsibly (corpus: managed plantations, aequcity G-zone).",
+      "sources": ["literature", "evermateria.md"]
+    },
+    {
+      "id": "poplar_src",
+      "name": "Poplar Short-Rotation Coppice",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["land", "water", "sunlight"],
+      "outputs": ["poplar stemwood"],
+      "energy_mj_kg": 0.5,
+      "throughput": "8-15 t/ha/yr",
+      "key_params": {
+        "rotation_yr": [10, 15],
+        "coppice_regrowth": true,
+        "carbon_fraction": 0.48
+      },
+      "efe_notes": "Coppice regrowth after harvest — replanting eliminated after establishment.",
+      "sources": ["literature", "evermateria.md"]
+    },
+    {
+      "id": "cork_oak_grove",
+      "name": "Cork Oak Montado (harvest-without-killing)",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["land", "water", "sunlight", "25-yr establishment patience"],
+      "outputs": ["cork bark (regenerating)"],
+      "energy_mj_kg": 0.3,
+      "throughput": "100-200 kg cork/tree per 9-yr cycle (~1.7 t/ha/yr amortized)",
+      "key_params": {
+        "first_harvest_yr": 25,
+        "harvest_cycle_yr": 9,
+        "tree_life_yr": 200,
+        "tree_felled": false,
+        "carbon_fraction": 0.50
+      },
+      "efe_notes": "THE paradigm replenishable: bark regenerates; the tree is never felled; montado agroforestry is a biodiversity hotspot. Harvest is carbon-sparing by construction.",
+      "sources": ["literature", "All-Purpose Manufactory (M3.6)"]
+    },
+    {
+      "id": "algae_photobioreactor",
+      "name": "Algae Photobioreactor (vertical farm)",
+      "stage": "cultivation",
+      "status": "BLUEPRINT",
+      "inputs": ["CO2 (flue or DAC)", "water", "nutrients", "sunlight/LED"],
+      "outputs": ["algal biomass"],
+      "energy_mj_kg": 2.0,
+      "throughput": "20-80 t/ha/yr dry (claims to 100+)",
+      "key_params": {
+        "doubling_time_days": [1, 3],
+        "co2_enrichment": "flue or DAC stream",
+        "continuous": true,
+        "carbon_fraction": 0.50
+      },
+      "efe_notes": "Continuous cultivation — no seasons, no fields; integrated CO2 sequestration (UMAGCONNEC carbon-negative production).",
+      "sources": ["UMAGCONNEC", "3deconomy"]
+    },
+    {
+      "id": "reed_harvest",
+      "name": "Cape Reed Harvest (dual-ecology wetland feedstock)",
+      "stage": "cultivation",
+      "status": "BLUEPRINT",
+      "inputs": ["invasive-adjacent wetland stands", "harvest labor"],
+      "outputs": ["bio-silicate reed mass (XEROSIL feedstock)"],
+      "energy_mj_kg": 0.6,
+      "throughput": "5-12 t/ha/yr annual harvest",
+      "key_params": {
+        "cycle": "annual",
+        "dual_ecology": "clears invasive Acacia mearnsii -> fynbos restoration",
+        "carbon_fraction": 0.45
+      },
+      "efe_notes": "Dual ecology: the harvest IS restoration. Feedstock cost is negative-adjacent (invasive-clearing subsidies).",
+      "sources": ["XEROSIL-MATRIX"]
+    },
+    {
+      "id": "rubber_plantation",
+      "name": "Natural Rubber Plantation (Hevea tapping)",
+      "stage": "cultivation",
+      "status": "LITERATURE",
+      "inputs": ["land", "water", "sunlight"],
+      "outputs": ["latex"],
+      "energy_mj_kg": 1.0,
+      "throughput": "1-2.5 t/ha/yr latex",
+      "key_params": {
+        "first_tap_yr": 7,
+        "productive_life_yr": [25, 30],
+        "carbon_fraction": 0.84
+      },
+      "efe_notes": "Highest carbon fraction in the inventory (polyisoprene); renewable belt elastomer for the Manufactory drive systems.",
+      "sources": ["literature", "All-Purpose Manufactory"]
+    },
+    {
+      "id": "retting_decortication",
+      "name": "Retting + Decortication (bast fiber extraction)",
+      "stage": "generation",
+      "status": "LITERATURE",
+      "inputs": ["hemp straw", "flax straw", "water or dew/enzymes"],
+      "outputs": ["bast fiber", "hurd/shive"],
+      "energy_mj_kg": [1.5, 3.0],
+      "throughput": "line processing 1-5 t straw/hr",
+      "key_params": {
+        "methods": ["field/dew retting", "water retting", "enzymatic retting"],
+        "fiber_yield_fraction": [0.25, 0.35]
+      },
+      "efe_notes": "Enzymatic retting cuts water use; field retting is solar-powered microbiology.",
+      "sources": ["literature"]
+    },
+    {
+      "id": "densification",
+      "name": "Thermo-Mechanical Densification (densified laminate)",
+      "stage": "generation",
+      "status": "LITERATURE",
+      "inputs": ["bamboo veneer", "timber veneer"],
+      "outputs": ["densified laminate ('super-wood' class)"],
+      "energy_mj_kg": [2.0, 4.0],
+      "throughput": "batch press",
+      "key_params": {
+        "press_mpa": [40, 60],
+        "temp_c": [100, 150],
+        "strength_gain_x": [1.5, 2.0]
+      },
+      "efe_notes": "Partial delignification + compression: strength multiplied 1.5-2x with zero new material.",
+      "sources": ["literature", "aequvivum.md"]
+    },
+    {
+      "id": "mycelium_bioreactor",
+      "name": "Mycelium Biofabrication (grow-to-shape)",
+      "stage": "generation",
+      "status": "BLUEPRINT",
+      "inputs": ["agricultural waste substrate", "mycelium culture"],
+      "outputs": ["mycelium composite (grown to final shape)"],
+      "energy_mj_kg": [0.5, 2.0],
+      "throughput": "mold-to-shape in 5-7 days; vertical stacking",
+      "key_params": {
+        "growth_days": [5, 7],
+        "temp_c": [22, 28],
+        "humidity_pct": [60, 80]
+      },
+      "efe_notes": "The factory is the organism: no cutting, no molding waste, home-compostable at EoL. Five corpus uses: insulation, EMI shield, binder, sensor substrate, packaging.",
+      "sources": ["UMAGCONNEC", "aequcity.md", "AEQUBLOCK"]
+    },
+    {
+      "id": "anaerobic_digestion",
+      "name": "Anaerobic Digestion (biogas + digestate)",
+      "stage": "generation",
+      "status": "BLUEPRINT",
+      "inputs": ["organic waste stream"],
+      "outputs": ["biogas (CH4)", "digestate fertilizer"],
+      "energy_mj_kg": -8.0,
+      "throughput": "20-30 day retention; continuous feed",
+      "key_params": {
+        "retention_days": [20, 30],
+        "mesophilic_c": [35, 40]
+      },
+      "efe_notes": "NET ENERGY POSITIVE (negative MJ/kg = energy out): waste becomes both the CVD methane feedstock and the fertilizer. Zero-waste pillar exemplar.",
+      "sources": ["evermateria.md", "SUSTAINABLE METAL ALTERNATIVES"]
+    },
+    {
+      "id": "biochar_kiln_zero_emission",
+      "name": "Zero-Emission Biochar Kiln (pyrolysis)",
+      "stage": "generation",
+      "status": "SPEC",
+      "inputs": ["forest/agricultural biomass waste"],
+      "outputs": ["biochar", "syngas", "process heat"],
+      "energy_mj_kg": [2.0, 8.0],
+      "throughput": "continuous or batch kiln",
+      "key_params": {
+        "temp_c": [450, 700],
+        "emissions": "zero-emission kiln [corpus]",
+        "carbon_retention_pct": [50, 80],
+        "credit": "BIOCHAR_STORAGE (on-chain verified)"
+      },
+      "efe_notes": "One process, five economies (corpus): soil, composites, electrodes, catalysts, credits. The keystone replenishable of the Carbon study.",
+      "sources": ["aequcity.md", "cabon infinty loop 5.md"]
+    },
+    {
+      "id": "lignin_recovery",
+      "name": "Lignin Recovery (biorefinery valorization)",
+      "stage": "generation",
+      "status": "LITERATURE",
+      "inputs": ["black liquor / biorefinery side-stream"],
+      "outputs": ["lignin resin"],
+      "energy_mj_kg": [1.0, 5.0],
+      "throughput": "side-stream of pulping/bioethanol",
+      "key_params": {
+        "routes": ["kraft black liquor precipitation", "organosolv", "enzymatic"]
+      },
+      "efe_notes": "Byproduct valorization — the DLGC resin comes from what pulp mills burn. Zero-waste pillar in action.",
+      "sources": ["literature", "aequvivum.md"]
+    },
+    {
+      "id": "bio_graphene_flash",
+      "name": "Flash Bio-Graphene (Joule-heating from biochar)",
+      "stage": "generation",
+      "status": "BLUEPRINT",
+      "inputs": ["biochar"],
+      "outputs": ["bio-graphene (3-5% DLGC constituent)"],
+      "energy_mj_kg": [5.0, 15.0],
+      "throughput": "batch flash",
+      "key_params": {
+        "method": "flash/Joule heating",
+        "seconds_scale": true
+      },
+      "efe_notes": "Biochar -> graphene in seconds: the carbon apex route that makes DLGC's 3-5% bio-graphene fraction possible.",
+      "sources": ["cabon infinty loop 5.md"]
+    },
+    {
+      "id": "solar_thermal_pultrusion",
+      "name": "Solar-Thermal Pultrusion (DLGC line)",
+      "stage": "manufacture",
+      "status": "SPEC",
+      "inputs": ["bamboo fiber", "hemp fiber", "lignin resin", "bio-graphene", "solar heat", "molten-salt buffer"],
+      "outputs": ["DLGC structural profile"],
+      "energy_mj_kg": 4.4,
+      "throughput": "30 m continuous line",
+      "key_params": {
+        "graphene_alignment_tesla": [0.5, 1.0],
+        "densification_mpa": [40, 60],
+        "molten_salt_buffer_hr": 8,
+        "qc": "terahertz in-line",
+        "labor": "-30% semi-autonomous",
+        "glazing": "geopolymer"
+      },
+      "efe_notes": "Renewable heat; night/Cloud operation via 8-hr salt buffer; the anchor manufacture process of the replenishable program.",
+      "sources": ["aequvivum.md"]
+    },
+    {
+      "id": "clt_glulam_mill",
+      "name": "CLT / Glulam Mill (engineered timber)",
+      "stage": "manufacture",
+      "status": "BLUEPRINT",
+      "inputs": ["eucalyptus logs", "poplar logs", "bio-resin adhesive (<5%)"],
+      "outputs": ["CLT panel", "glulam beam"],
+      "energy_mj_kg": [2.0, 5.0],
+      "throughput": "panel line",
+      "key_params": {
+        "adhesive_share_pct": [3, 5],
+        "drying": "solar-assisted kiln"
+      },
+      "efe_notes": "Rotation forestry -> engineered timber: the aequcity structural hybrid (CLT + steel) and evermateria stream 6.",
+      "sources": ["evermateria.md", "aequcity.md"]
+    },
+    {
+      "id": "pla_fermentation",
+      "name": "PLA Fermentation (lactic-acid route)",
+      "stage": "manufacture",
+      "status": "LITERATURE",
+      "inputs": ["starch", "sugar", "CO2 (emerging routes)"],
+      "outputs": ["PLA pellet"],
+      "energy_mj_kg": [42, 54],
+      "throughput": "industrial fermentation + polymerization",
+      "key_params": {
+        "route": "fermentation -> lactic acid -> ring-opening polymerization",
+        "compost_cert": "industrial compost"
+      },
+      "efe_notes": "The Manufactory's housings-only polymer (60 C ceiling respected by design); D3 compost loop anchor.",
+      "sources": ["literature", "manufactory", "aequcity.md"]
+    },
+    {
+      "id": "pha_fermentation",
+      "name": "PHA Fermentation (microbial polyester)",
+      "stage": "manufacture",
+      "status": "LITERATURE",
+      "inputs": ["sugar", "plant oils", "methanol (emerging)"],
+      "outputs": ["PHA pellet"],
+      "energy_mj_kg": [50, 80],
+      "throughput": "industrial fermentation",
+      "key_params": {
+        "organisms": "Cupriavidus necator et al.",
+        "marine_biodegradable": true
+      },
+      "efe_notes": "True marine-biodegradable structural-bioplastic tier; the XEROSIL-MATRIX fungal-trigger companion.",
+      "sources": ["literature", "XEROSIL-MATRIX"]
+    },
+    {
+      "id": "geopolymer_glazing",
+      "name": "Geopolymer Glazing (no-lime coating)",
+      "stage": "manufacture",
+      "status": "SPEC",
+      "inputs": ["fly ash", "GGBS", "alkaline activator"],
+      "outputs": ["geopolymer coating (DLGC glazing)"],
+      "energy_mj_kg": [0.5, 1.5],
+      "throughput": "coating line",
+      "key_params": {
+        "chemistry": "no lime, no C-S-H, no carbonation [corpus]",
+        "function": "fire/rot/pest barrier for 100-yr DLGC life"
+      },
+      "efe_notes": "Waste-ash chemistry protecting the replenishable flagship — two doctrines in one coating.",
+      "sources": ["AEQUBLOCK", "aequvivum.md"]
+    },
+    {
+      "id": "fdm_pellet_printing",
+      "name": "FDM / Pellet / Continuous-Fiber Printing",
+      "stage": "manufacture",
+      "status": "SPEC",
+      "inputs": ["PLA/PHA/Hemp-PLA pellets", "continuous fiber"],
+      "outputs": ["printed parts", "toolheads", "housings"],
+      "energy_mj_kg": [1.0, 3.0],
+      "throughput": "print farm",
+      "key_params": {
+        "fdm_toolhead_c": 300,
+        "pellet_toolhead_c": 350,
+        "continuous_fiber_c": 250
+      },
+      "efe_notes": "Print-replace philosophy: any broken part re-printed locally — repair-before-recycle extends service years.",
+      "sources": ["manufactory", "3deconomy"]
+    },
+    {
+      "id": "greenhouse_farmplex",
+      "name": "Greenhouse Farmplex (stackable replicable grow modules)",
+      "stage": "cultivation",
+      "status": "BLUEPRINT",
+      "inputs": ["sunlight (transparent glazing)", "water (rainwater / E5 loop)", "seed + propagation stock", "sensing + irrigation control"],
+      "outputs": ["food crops", "seedlings + bamboo propagation stock", "algae feed"],
+      "energy_mj_kg": [0.5, 2.0],
+      "throughput": "2-5x field yield per greenhouse layer; N-floor stacking compresses footprint N-fold",
+      "key_params": {
+        "module": "single greenhouse = the smallest replicable unit",
+        "scaling": "replicate -> stack -> farmplex",
+        "yield_uplift_x": [2, 5],
+        "sites": ["rooftop", "vertical (LED)", "F-zone sector", "underground (algae)"],
+        "aefri_gate": "indoor staples only after MEASURED kWh/kg (AEFRI v0.2 finding 3: AeroFarms/Bowery/Plenty failures on grid electricity)"
+      },
+      "efe_notes": "Under EFE free-energy the land-for-energy trade inverts — but the gate is MEASUREMENT, not thesis. Best fiber-adjacent use: bamboo nursery modules (propagation stock shortens the 5-7 yr stand lead time). Structural fiber itself remains field agronomy.",
+      "sources": ["AEFRI-v0.2", "aequcity.md (F-zone)"]
+    },
+    {
+      "id": "cil_grow_unit",
+      "name": "CIL Grow Unit (smallest complete replicable diamond grower)",
+      "stage": "generation",
+      "status": "BLUEPRINT",
+      "inputs": ["atmospheric CO2 (DAC cartridge)", "water (electrolysis)", "renewable power (PV + molten-salt buffer)", "CH4 synthesis loop (Sabatier / biogas)"],
+      "outputs": ["CVD diamond", "DAC_CAPTURE credits (surplus)"],
+      "energy_mj_kg": 1026.0,
+      "throughput": "~7,700 kg diamond per MW-year (285 kWh/kg floor); ~0.8 t/yr per 30 kW chamber",
+      "key_params": {
+        "unit": "DAC cartridge + CH4 loop + 1 CVD chamber + salt-buffered PV + in-line QC + credits hook",
+        "scaling": "replicate units -> racks -> farmplex -> underground vault (thermal mass, security, zero bio-land competition)",
+        "power_ledger": "0.13 MW nameplate (~0.2 ha PV) per t/yr; 60-chamber facility ~50 t/yr ~ 7.2 MW ~ 11 ha PV",
+        "carbon_sign_threshold": "per-kg negative only below ~12.9 g/kWh grid intensity; facility-level net-negativity via DAC surplus -> BIOCHAR_STORAGE"
+      },
+      "efe_notes": "The Seed Cell pattern (AEFRI) applied to carbon: the smallest complete replicable grow unit, then scale | stack | underground. The sky is the field; the reactor is the furrow; the seed is CO2.",
+      "sources": ["cabon infinty loop 5.md", "AEFRI-v0.2 (Seed Cell pattern)"]
+    },
+    {
+      "id": "aequcrop",
+      "name": "AEQUACROP — Three-Module Bio-Integrated CEA Platform",
+      "stage": "cultivation",
+      "status": "OPTIBEST-CERTIFIED [CORPUS]",
+      "inputs": ["sunlight (passive climate control)", "water (rainwater / AEQUAQUA greywater loop)", "organic waste (feeds bio-converter)", "open-source nutrients (zero-patent seed)"],
+      "outputs": ["year-round food (residential + community)", "biomaterials + biogas (bio-converter)", "closed compost loop"],
+      "energy_mj_kg": [5, 40],
+      "throughput": "passive-climate grow station; horizontal coverage: field, rooftop farm, greenhouse wall, living architecture",
+      "key_params": {
+        "module_a": "GROW CORE — self-contained passively climate-controlled growing station (hydroponic/aquaponic circuit)",
+        "module_b": "BIO-CONVERTER — waste-to-biomaterial anaerobic digester (15 m2 floor plan); biomaterial output feeds AEQUFAB",
+        "module_c": "HABITAT INTEGRATION — rooftop farm + greenhouse wall + living architecture + food processing station",
+        "scaling": "1 unit -> household -> community -> global; interface-controlled (ICD: grow-core <-> bio-converter <-> habitat <-> AEQUFAB <-> AEQUAQUA)",
+        "self_replication": "bio-converter -> AEQUFAB interface: waste becomes biomaterial feedstock for fab-printed modules (infinitely self-replicable-esque, formally specified in the corpus ICD)",
+        "sites": ["field", "rooftop", "greenhouse wall", "living architecture"],
+        "license": "CC-BY-SA 4.0 / OSHWA-compliant open-source hardware",
+        "energy_note": "passive climate control — pumps/sensors only; [MODELLED] until MEASURED (AEFRI gate)",
+        "glazing_upgrade": "Thanceln enhanced transparent wood [SPEC, LITERATURE-ANCHORED]: replaces recycled-PC double-wall glazing; >=85% PAR met (literature 85-90% transmittance); haze = diffuse light improves canopy uniformity; delignification lignin byproduct feeds DLGC lignin_resin stream (38% of DLGC); bio-resin infiltration closes the bio-loop; [MODELLED] until MEASURED panel prototypes"
+      },
+      "efe_notes": "Wave 1 CNI substrate: food sovereignty — local, open, zero-patent. Passive climate = no grid HVAC. Closes waste->food->biomaterial->fab loop.",
+      "sources": ["devzone/engineering/1 USABLE/aequacrop/ (grow-core, bio-converter, habitat-integration, specifications/integration-plan)"]
+    },
+    {
+      "id": "aequgrow",
+      "name": "AEQUIGROW v3.0 — Modular Vertical Aeroponic Farming System",
+      "stage": "cultivation",
+      "status": "OPTIBEST-CERTIFIED [CORPUS] (9 cycles, CERTIFIED PREMIUM)",
+      "inputs": ["water (recirculating; <0.5 L/day net loss per tower)", "nutrient mist (aeroponic)", "power (100 W PV per tower; surplus to cluster)", "AEQUFAB-printed components"],
+      "outputs": ["leafy greens 15-25 kg/tower/yr", "surplus energy to cluster"],
+      "energy_mj_kg": [126, 210],
+      "throughput": "264-403 plants/m2 (vs 20-40 soil); conical tower = 3x yield/footprint vs flat shelves; aeroponics: 95% less water than soil, 40% less than DWC",
+      "key_params": {
+        "tower_footprint_m2": 0.159,
+        "yield_density_plants_m2": [264, 403],
+        "annual_yield_kg_tower": [15, 25],
+        "water_l_day_tower": [2, 5],
+        "net_water_loss_l_day": 0.5,
+        "tiers": "T1 Proto (commercially sustainable) -> T2 Advanced (mycelium insulation, +20-30% yield from root temp stability) -> T3 Apex (diamond/graphene, Carbon Infinity Loop closure)",
+        "scaling": "household 1-4 towers -> community 10-50 -> commercial node 100-500 -> global",
+        "sites": ["indoor", "vertical", "rooftop"],
+        "license": "CC-BY-SA | open-source",
+        "energy_note": "derived: 100 W x 8760 h / 15-25 kg = 35-58 kWh/kg = 126-210 MJ/kg; [MODELLED] until MEASURED (AEFRI gate)"
+      },
+      "efe_notes": "Highest yield per m2 of floor at lowest energy/water/material input (corpus core purpose). T3 apex tier closes into the CIL diamond atmospheric family. AEQUFAB-manufacturable = self-replicable-esque.",
+      "sources": ["devzone/engineering/1 USABLE/AEQUIGROW.md"]
+    }
+  ]
+}

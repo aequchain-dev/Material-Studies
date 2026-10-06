@@ -83,7 +83,7 @@ pattern applied to carbon.
 | `xerosil_feedstock` | XEROSIL Feedstock (Cape reeds + resurrection plants) | [BLUEPRINT] | annual wetland harvest | 5.0-12.0 t/ha/yr | -1.11 |
 | `straw_cellulose` | Straw / Waste Cellulose (residue stream) | [LITERATURE] | co-product of grain harvest | 3.0-6.0 t/ha/yr | -1.06 |
 | `algae_biopolymer` | Algae Biopolymer (photobioreactor grown) | [BLUEPRINT] | continuous (days-scale doubling) | 20.0-80.0 t/ha/yr | -1.04 |
-| `ETW` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | [SPEC [LITERATURE-ANCHORED]] | 3-8 yr SRWC rotation; glazing demand is panel-area-bound, not tonnage-bound | n/a | -0.99 |
+| `thanceln` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | [SPEC [LITERATURE-ANCHORED]] | 3-8 yr SRWC rotation; glazing demand is panel-area-bound, not tonnage-bound | n/a | -0.99 |
 | `bioliquor` | Bioliquor (carbon growing medium) | [BLUEPRINT] | continuous mixing; cycles into biomass within one season | n/a | -0.21 |
 | `hempcrete` | Hempcrete (hemp hurd + lime binder) | [LITERATURE] | annual crop feedstock; cast-in-place or blocks | n/a | -0.20 |
 | `pla` | PLA (polylactic acid) | [LITERATURE] | crop-annual feedstock; industrial fermentation | n/a | +0.35 |
@@ -175,7 +175,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `poplar_timber` | Poplar Timber (short-rotation coppice) | CLT/glulam feedstock; pulp + biorefiner lignin stream |
 | `spider_silk` | Spider-Silk Protein (fermentation route) | UMAGCONNEC pin guides (bamboo-fiber reinforced); high-toughness reinforcement tier |
 | `straw_cellulose` | Straw / Waste Cellulose (residue stream) | packed insulation (AEQUBLOCK T1); cellulose insulation (stream 8); cellulose acetate + nanofiber (Bio-Fuse); anaerobic digestion feed |
-| `ETW` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | AEQUACROP grow-core glazing (replaces recycled-PC double-wall panels, >=85% PAR); windows + skylights (aequcity building stock); solar-cell substrates (diffuse-light tolerant); diffuse-light luminaires + display substrates |
+| `thanceln` | Thanceln — Enhanced Transparent Wood (bio-resin infiltrated delignified cellulose glazing) | AEQUACROP grow-core glazing (replaces recycled-PC double-wall panels, >=85% PAR); windows + skylights (aequcity building stock); solar-cell substrates (diffuse-light tolerant); diffuse-light luminaires + display substrates |
 | `xerosil_feedstock` | XEROSIL Feedstock (Cape reeds + resurrection plants) | XEROSIL-MATRIX petro-plastic replacement (75 MPa, self-healing); fungal-trigger biodegradation tier |
 
 ## §VII — SIMULATION RESULTS (computed at generation time)
@@ -199,7 +199,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `xerosil_feedstock` | replenishable | [BLUEPRINT] | 1.65 | 2.0 | -1.11 | -3.21 |
 | `straw_cellulose` | replenishable | [LITERATURE] | 1.54 | 1.0 | -1.06 | -3.16 |
 | `algae_biopolymer` | replenishable | [BLUEPRINT] | 1.83 | 3.0 | -1.04 | -3.14 |
-| `ETW` | replenishable | [SPEC [LITERATURE-ANCHORED]] | 1.65 | 16.5 | -0.99 | -3.09 |
+| `thanceln` | replenishable | [SPEC [LITERATURE-ANCHORED]] | 1.65 | 16.5 | -0.99 | -3.09 |
 | `bioliquor` | replenishable | [BLUEPRINT] | 1.10 | 0.5 | -0.21 | -2.31 |
 | `hempcrete` | replenishable | [LITERATURE] | 0.00 | 4.0 | -0.20 | -2.30 |
 | `concrete_pcc` | baseline | [LITERATURE] | 0.00 | 1.1 | +0.12 | -1.98 |
@@ -369,7 +369,7 @@ every resource for a demand figure, computed live from the registries.
 | `eucalyptus_timber` | 81.0 | **A** | sustainable_materials | renewable_energy |
 | `poplar_timber` | 80.0 | **A** | sustainable_materials | renewable_energy |
 | `straw_cellulose` | 80.0 | **A** | sustainable_materials | longevity |
-| `ETW` | 77.5 | **B** | sustainable_materials | renewable_energy |
+| `thanceln` | 77.5 | **B** | sustainable_materials | renewable_energy |
 | `pha` | 71.5 | **B** | sustainable_materials | longevity |
 | `natural_rubber` | 69.5 | **C** | sustainable_materials | renewable_energy |
 | `spider_silk` | 69.0 | **C** | sustainable_materials | renewable_energy |
@@ -387,7 +387,7 @@ every resource for a demand figure, computed live from the registries.
 | `pha` | cost premium vs PLA | 4x3 | **HIGH** |
 | `spider_silk` | industrial-scale production UNVALIDATED (corpus-flagged) | 4x3 | **HIGH** |
 | `cil_diamond` | 285 kWh/kg energy floor — a power program first (0.13 MW nameplate per t/yr) | 3x4 | **HIGH** |
-| `ETW` | delignification liquor stream must close (lignin -> DLGC resin feedstock, chemicals recovered) | 3x4 | **HIGH** |
+| `thanceln` | delignification liquor stream must close (lignin -> DLGC resin feedstock, chemicals recovered) | 3x4 | **HIGH** |
 | `bamboo` | plantation lead time 5-7 yr | 3x3 | **MEDIUM** |
 | `eucalyptus_timber` | water demand must be sited responsibly | 3x3 | **MEDIUM** |
 | `clt_glulam` | building-code approval pathways | 3x3 | **MEDIUM** |

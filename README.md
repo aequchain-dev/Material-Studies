@@ -1,8 +1,19 @@
-# Material Flow Studies — Master Index
-### The Complete aequchain Materials Program: Eight Categories · One Doctrine
+# aequchain Material Studies
 
-**Series date:** 2026-10-05 · **Compiled by:** aequchain Coding Agent (Precision Architect)
+The complete aequchain materials program: eight hand-written Material Flow studies + one machine-generated companion, and `aequchain-materials-lab/` — the `efemat` toolkit that generates it.
+
+- **Regenerate study #9:** `cd aequchain-materials-lab && python3 -m efemat detail study` (run-twice-diff-zero)
+- **Test suite:** `python3 -m unittest discover -s tests -t .` (49 tests, mutation-checked)
+- **CLI:** `python3 -m efemat --help` — registry · simulate · calculate · evaluate · synthesize · prototype · research · detail
+
+---
+
+# Material Flow Studies — Master Index
+### The Complete aequchain Materials Program: Eight Categories + One Generated Companion · One Doctrine
+
+**Series date:** 2026-10-05 (studies) · 2026-10-06 (companion + environment) · **Compiled by:** aequchain Coding Agent (Precision Architect)
 **Deliberation:** laya decision engine — 7-category partition (0.52) · mirror-metals template (0.397) · series evidence ~7/10 (targeted greps + absorbed corpus)
+**Environment:** `aequchain-materials-lab/` — the `efemat` toolkit (registry · simulate · calculators · evaluate · synthesize · prototype · detail · research); study #9 is its generated artifact (49 tests, mutation-checked, run-twice-diff-zero)
 
 ---
 
@@ -18,6 +29,7 @@
 | 6 | `Material Flow: Energy Storage Materials.md` | LFP · Na-ion · V-flow · betavoltaic · thermal | **AEQUIGEN six-mode architecture** (100 mW eternal diamond baseline) | Storage chosen for safety/longevity/circularity — never energy density |
 | 7 | `Material Flow: Electronic & Semiconductor Materials.md` | Si · diamond electronics · printed conductors · phosphors | **Printable-electronics loop** (bio-ink → PCB → E4 e-waste mining) | 3 nm no-NPU RISC-V deletes demand; 7 unprintable things shrink to zero |
 | 8 | `Material Flow: Gases & Fluids.md` | O₂ · N₂ · H₂ · CO₂ · Ar · working fluids · water | **Air separation + electrolysis + CO₂ capture** | CO₂ = waste of the old economy, feedstock of the apex material |
+| 9 | `Material Flow: Replenishable Materials.md` *(companion deep-dive)* | Cultivation cycles · yields · rotations · generation/manufacture processes | **Cultivation-to-Regrowth** (source → cultivation → generation → manufacture → application → compost) | **[GENERATED]** by `efemat`: every number computed from JSON registries (29 materials · 26 processes); two replenishable families — biological fields + atmospheric CIL diamond (honest grid-sensitivity finding); AEQUACROP + AEQUIGROW CEA pair; Thanceln transparent-wood glazing (lignin feeds DLGC resin); calculators framework §VII.h; Y12 ~129,450 ha (all-bamboo lever −78%) |
 
 ---
 

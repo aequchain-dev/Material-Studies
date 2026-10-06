@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "note": "EFE Filter seven-pillar seed, corpus-aligned. [CONFIGURABLE] PROGRAMMABLE gate: edit weights or definitions here and behaviour changes with zero code changes. Scores are seeded per-material in materials.json (efe_seed) as [SEED-ESTIMATE] pending measured data.",
+  "weights": {
+    "sustainable_materials": 0.20,
+    "renewable_energy": 0.15,
+    "zero_waste": 0.15,
+    "circularity": 0.15,
+    "longevity": 0.10,
+    "local_production": 0.10,
+    "health_equity": 0.15
+  },
+  "pillar_definitions": {
+    "sustainable_materials": "replenishable/recycled feedstock share; critical-element elimination",
+    "renewable_energy": "process energy renewability (solar-thermal, biogas, renewable-dedicated grid)",
+    "zero_waste": "all streams valued; no landfill, no combustion without capture",
+    "circularity": "closed-loop EoL quality (GREEN/SILVER/BRONZE/BLUE stream grading)",
+    "longevity": "design life, durability, repairability",
+    "local_production": "regional scale, supply sovereignty, community benefit",
+    "health_equity": "non-toxic, safe handling, equitable access"
+  },
+  "grade_bands": [
+    [90, "A+"],
+    [80, "A"],
+    [70, "B"],
+    [60, "C"],
+    [50, "D"],
+    [0, "E"]
+  ]
+}
