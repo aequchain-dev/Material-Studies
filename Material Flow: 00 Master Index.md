@@ -1,9 +1,9 @@
 # Material Flow Studies — Master Index
-### The Complete aequchain Materials Program: Eight Categories + One Generated Companion · One Doctrine
+### The Complete aequchain Materials Program: Eight Categories + One Generated Companion + One Product Dossier · One Doctrine
 
-**Series date:** 2026-10-05 (studies) · 2026-10-06 (companion + environment) · **Compiled by:** aequchain Coding Agent (Precision Architect)
+**Series date:** 2026-10-05 (studies) · 2026-10-06 (companion + environment) · 2026-10-07 (Transparent Wood rename + product dossier + TW concept family) · **Compiled by:** aequchain Coding Agent (Precision Architect)
 **Deliberation:** laya decision engine — 7-category partition (0.52) · mirror-metals template (0.397) · series evidence ~7/10 (targeted greps + absorbed corpus)
-**Environment:** `aequchain-materials-lab/` — the `efemat` toolkit (registry · simulate · calculators · evaluate · synthesize · prototype · detail · research); study #9 is its generated artifact (49 tests, mutation-checked, run-twice-diff-zero)
+**Environment:** `aequchain-materials-lab/` — the `efemat` toolkit (registry · simulate · calculators · evaluate · synthesize · prototype · detail · research); study #9 is its generated artifact (58 tests, mutation-checked, run-twice-diff-zero)
 
 ---
 
@@ -19,7 +19,8 @@
 | 6 | `Material Flow: Energy Storage Materials.md` | LFP · Na-ion · V-flow · betavoltaic · thermal | **AEQUIGEN six-mode architecture** (100 mW eternal diamond baseline) | Storage chosen for safety/longevity/circularity — never energy density |
 | 7 | `Material Flow: Electronic & Semiconductor Materials.md` | Si · diamond electronics · printed conductors · phosphors | **Printable-electronics loop** (bio-ink → PCB → E4 e-waste mining) | 3 nm no-NPU RISC-V deletes demand; 7 unprintable things shrink to zero |
 | 8 | `Material Flow: Gases & Fluids.md` | O₂ · N₂ · H₂ · CO₂ · Ar · working fluids · water | **Air separation + electrolysis + CO₂ capture** | CO₂ = waste of the old economy, feedstock of the apex material |
-| 9 | `Material Flow: Replenishable Materials.md` *(companion deep-dive)* | Cultivation cycles · yields · rotations · generation/manufacture processes | **Cultivation-to-Regrowth** (source → cultivation → generation → manufacture → application → compost) | **[GENERATED]** by `efemat`: every number computed from JSON registries (29 materials · 26 processes); two replenishable families — biological fields + atmospheric CIL diamond (honest grid-sensitivity finding); AEQUACROP + AEQUIGROW CEA pair; ETW transparent-wood glazing (lignin feeds DLGC resin); calculators framework §VII.h; Y12 ~129,450 ha (all-bamboo lever −78%) |
+| 9 | `Material Flow: Replenishable Materials.md` *(companion deep-dive)* | Cultivation cycles · yields · rotations · generation/manufacture processes | **Cultivation-to-Regrowth** (source → cultivation → generation → manufacture → application → compost) | **[GENERATED]** by `efemat`: every number computed from JSON registries (29 materials · 27 processes); two replenishable families — biological fields + atmospheric CIL diamond (honest grid-sensitivity finding); AEQUACROP + AEQUIGROW CEA pair; Transparent Wood glazing (lignin feeds DLGC resin); calculators framework §VII.h; Y12 ~129,450 ha (all-bamboo lever −78%) |
+| 10 | `Material Flow: Transparent Wood.md` *(product dossier)* | Operating model · gap ledger · new materials · process · applications | **Offcut-to-Panel-to-Regrowth** (SRWC offcut → delignify [lignin → DLGC resin] → infiltrate → panel → regrind) | First glazing in the EFE scoring universe (EFE-DB has no glazing class); double loop (lignin feeds DLGC resin 38%; removed lignin = UV absorber); 3 new tier-2 concepts + `transparent_wood_line` [BLUEPRINT]; net −0.99 kg CO₂/kg; EFE 77.5/B |
 
 ---
 
@@ -84,7 +85,10 @@
 - **Scriptable:** every registry JSON is standalone-parseable (dev policy: extensible, modular, automatable).
 - **Investor narrative:** the stack diagram + signature facts are the materials chapter of the EFE story.
 - **Future study:** each file closes with its residual ledger — the honest list of what remains unread or unvalidated.
+- **Product level:** dossier #10 sets the pattern — category studies define classes; product dossiers instantiate them (operating model · gaps · new materials · process · applications · gate test-methods · documentation map).
 
 *The materials program in one sentence: **substitute what you can, redesign around what you keep, recycle what you must, track every gram — and let the sky, the soil, and the bin be the only mines.***
 
 *Series complete at plateau — eight categories, one doctrine, every claim status-tagged. No further refinement possible within the corpus evidence.*
+
+*Extended 2026-10-07 at product level: dossier #10 (Transparent Wood) + the TW concept family — the category series stands; the program now also grows product-first.*
