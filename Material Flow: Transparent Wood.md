@@ -239,3 +239,67 @@ grades, honestly separated.
 (the grow-core takes diffuse light as a feature) -> CLOSE-LOOP RECYCLE (lignin to DLGC,
 cellulose to regrind) -> TRACK EVERY GRAM (panel passports on-chain). The window is a
 field; the field regrows the window.*
+
+---
+
+## §XII — SUITE v3 CYCLE (2026-10-09): GRADED, REFINED, LOOP-QUANTIFIED
+
+*The Material Engineering Suite (efemat 2.0) applied to this material. Every number
+below is computed by a named suite command and cross-checked in-session; evidence
+classes per AEFRI v0.2. Full ledger: FINDINGS.md F17–F20, D14–D15.*
+
+### §XII.1 — Class grading (gap 11 CLOSED) `[MEASURED]`
+
+Glazing baselines registered (`glass_soda_lime`, `pc_polycarbonate`, `[LITERATURE]`,
+category `glazing_baseline`); first-ever class grading via multi-category select
+(`engineered_wood_glazing,glazing_baseline`):
+
+| view | ranking | numbers |
+|---|---|---|
+| **strength-limited (σ^⅔/ρ)** | **TW wins doctrine AND pure performance** | TW 16.88 > PC 13.47 > glass 5.43 |
+| stiffness-limited (E^½/ρ) | glass wins pure performance | glass 3.35 > TW 1.93 > PC 1.29 |
+| carbon (net kg CO₂/kg) | **TW only net-negative in class** | TW −0.99 · glass +1.2 · PC +6.5 |
+| EFE | TW 77.5 (B) · glass 64.0 (C) · PC 34.5 (E) | weakest TW pillar: renewable_energy (6) |
+
+**Reading:** for impact/wind/hail-limited glazing — the AEQUACROP grow-core case —
+TW dominates its class with no doctrine lever invoked. Deflection-limited spans stay
+glass; framing compensates. The doctrine lever is now measured, not assumed.
+
+### §XII.2 — Refinement (evidence-gated) `[MODELLED]`
+
+| goal | best evidence-passing chain | result |
+|---|---|---|
+| strength | `align_fiber → densify_press` | tensile 80 → 124.8 MPa (+56%), modulus 4.5 → 7.67 GPa |
+| carbon | `thermal_cure` | net −0.99 → −1.003 kg CO₂/kg (the permanence lever, F14 generalized) |
+| efe | **plateau — seed-locked by design** | pillar estimates move only on MEASURED data |
+
+The `[LITERATURE-SCOUTED]` UV-absorber scenario outranks every improvement on carbon
+(u 0.03 > 0.0131): its 1000 h weathering gate (§VII) is this material's
+highest-leverage experiment.
+
+### §XII.3 — The lignin loop, quantified `[MODELLED]`
+
+Declared parameters: hardwood lignin 0.20–0.25 `[LITERATURE]` × liquor recovery
+0.85–0.95 `[LITERATURE]`; DLGC lignin_resin share 0.38 `[SPEC]`:
+
+**1 t TW panels → 0.17–0.24 t lignin liquor → co-feeds 0.45–0.63 t DLGC.**
+A 100 kt/yr glazing line carries resin for 45–63 kt/yr of flagship. The glazing
+program and the DLGC program are one industrial metabolism, now with numbers.
+
+### §XII.4 — Family extension `[LITERATURE-SCOUTED]`
+
+Concept 14 `transparent_bamboo` registered (tier-2, field source, extraction route):
+delignified bamboo + bio-resin — literature claims higher strength than TW (natural
+axial fiber alignment) + UV-blocking retained lignin; `transparent_wood_line` already
+lists bamboo culm sections as feedstock. **MEASURED gate:** transmittance ≥80%,
+tensile ≥100 MPa full-culm panels, 1000 h UV vs TW control. Carries no LCA numbers
+(no-fabrication boundary, tested).
+
+### §XII.5 — Residual ledger update
+
+- Gap 11 (glazing baselines) **CLOSED** — §XII.1.
+- Gap 1 (panel-scale infiltration) remains the master gate; §XII.2's refinement
+  chains are `[MODELLED]` scenarios until MEASURED.
+- The renewable_energy pillar (6/10) is the weakest: the 8–25 MJ/kg
+  delignification+infiltration energy is a *measurement* problem — no pathway moves
+  a seed (F20).

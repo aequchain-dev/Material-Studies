@@ -71,6 +71,7 @@ pattern applied to carbon.
 | `biochar` | Biochar (stable pyrogenic carbon) | [SPEC] | continuous kiln; feedstock from rotation forestry residues | n/a | -2.23 |
 | `dlgc` | DLGC (Densified Ligno-Cellulosic Graphene Composite) | [SPEC] | perennial feedstock; composite line continuous | n/a | -1.94 |
 | `cork` | Cork (regenerating bark harvest) | [LITERATURE] | first harvest yr 25; then 9-yr cycles; tree life 200+ yr | 1.2-2.0 t/ha/yr | -1.62 |
+| `hydrochar` | Hydrochar (Phyto-Shield, HTC sterile soil carbon) | [SPEC] | HTC batch 4-6 h; feedstock regrows annually (55 ha nutrient + 35 ha defense per 100 ha system) | 4.4-6.6 t/ha/yr | -1.52 |
 | `clt_glulam` | CLT / Glulam (engineered timber) | [BLUEPRINT] | rotation forestry feedstock; mill continuous | n/a | -1.44 |
 | `eucalyptus_timber` | Eucalyptus Timber (managed rotation) | [LITERATURE] | 7-10 yr rotation (fiber/pulp); 12-15 yr (sawn) | 8.0-20.0 t/ha/yr | -1.44 |
 | `poplar_timber` | Poplar Timber (short-rotation coppice) | [LITERATURE] | 10-15 yr rotation; coppice regrows without replanting | 8.0-15.0 t/ha/yr | -1.44 |
@@ -90,8 +91,9 @@ pattern applied to carbon.
 | `spider_silk` | Spider-Silk Protein (fermentation route) | [UNVALIDATED] | fermentation days-scale | n/a | +0.50 |
 | `pha` | PHA (polyhydroxyalkanoate) | [LITERATURE] | crop-annual feedstock; industrial fermentation | n/a | +0.59 |
 | `cil_diamond` | CIL Diamond (CVD, atmospheric feedstock) | [SPEC] | continuous CVD deposition — the sky regrows the feedstock nightly | n/a | +16.85 |
+| `graphene_laser` | Laser-Ablation Graphene (from CIL diamond waste) | [SPEC] | continuous laser ablation; feedstock is the CIL diamond cascade's own waste stream | n/a | +26.67 |
 
-*22 replenishables registered; net CO2 computed by `efemat.simulate.lca` at renewable grid (0.02 kg/MJ), composition-weighted biogenic uptake, per-material permanence.*
+*24 replenishables registered; net CO2 computed by `efemat.simulate.lca` at renewable grid (0.02 kg/MJ), composition-weighted biogenic uptake, per-material permanence.*
 
 ## §IV — GENERATION & CULTIVATION PROCESSES (source)
 
@@ -109,6 +111,7 @@ pattern applied to carbon.
 | `greenhouse_farmplex` | Greenhouse Farmplex (stackable replicable grow modules) | [BLUEPRINT] | 2-5x field yield per greenhouse layer; N-floor stacking compresses footprint N-fold | 0.5-2.0 MJ/kg |
 | `aequcrop` | AEQUACROP — Three-Module Bio-Integrated CEA Platform | [OPTIBEST-CERTIFIED [CORPUS]] | passive-climate grow station; horizontal coverage: field, rooftop farm, greenhouse wall, living architecture | 5.0-40.0 MJ/kg |
 | `aequgrow` | AEQUIGROW v3.0 — Modular Vertical Aeroponic Farming System | [OPTIBEST-CERTIFIED [CORPUS] (9 cycles, CERTIFIED PREMIUM)] | 264-403 plants/m2 (vs 20-40 soil); conical tower = 3x yield/footprint vs flat shelves; aeroponics: 95% less water than soil, 40% less than DWC | 126.0-210.0 MJ/kg |
+| `phyto_sterile_agriculture` | Phyto-Sterile Agriculture (HTC-fed regenerative production) | [BLUEPRINT] | 100 ha reference: 55 ha Stream A (440-660 t fresh) + 35 ha Stream B (280-380 t fresh) + 10 ha infrastructure | 0.2-0.5 MJ/kg |
 
 **Cultivation signatures (key params):**
 
@@ -124,6 +127,7 @@ pattern applied to carbon.
 - **Greenhouse Farmplex (stackable replicable grow modules)** — module=single greenhouse = the smallest replicable unit; scaling=replicate -> stack -> farmplex; yield_uplift_x=[2, 5]; sites=['rooftop', 'vertical (LED)', 'F-zone sector', 'underground (algae)']; aefri_gate=indoor staples only after MEASURED kWh/kg (AEFRI v0.2 finding 3: AeroFarms/Bowery/Plenty failures on grid electricity)
 - **AEQUACROP — Three-Module Bio-Integrated CEA Platform** — module_a=GROW CORE — self-contained passively climate-controlled growing station (hydroponic/aquaponic circuit); module_b=BIO-CONVERTER — waste-to-biomaterial anaerobic digester (15 m2 floor plan); biomaterial output feeds AEQUFAB; module_c=HABITAT INTEGRATION — rooftop farm + greenhouse wall + living architecture + food processing station; scaling=1 unit -> household -> community -> global; interface-controlled (ICD: grow-core <-> bio-converter <-> habitat <-> AEQUFAB <-> AEQUAQUA); self_replication=bio-converter -> AEQUFAB interface: waste becomes biomaterial feedstock for fab-printed modules (infinitely self-replicable-esque, formally specified in the corpus ICD); sites=['field', 'rooftop', 'greenhouse wall', 'living architecture']; license=CC-BY-SA 4.0 / OSHWA-compliant open-source hardware; energy_note=passive climate control — pumps/sensors only; [MODELLED] until MEASURED (AEFRI gate); glazing_upgrade=Transparent Wood [SPEC, LITERATURE-ANCHORED]: replaces recycled-PC double-wall glazing; >=85% PAR met (literature 85-90% transmittance); haze = diffuse light improves canopy uniformity; delignification lignin byproduct feeds DLGC lignin_resin stream (38% of DLGC); bio-resin infiltration closes the bio-loop; [MODELLED] until MEASURED panel prototypes
 - **AEQUIGROW v3.0 — Modular Vertical Aeroponic Farming System** — tower_footprint_m2=0.159; yield_density_plants_m2=[264, 403]; annual_yield_kg_tower=[15, 25]; water_l_day_tower=[2, 5]; net_water_loss_l_day=0.5; tiers=T1 Proto (commercially sustainable) -> T2 Advanced (mycelium insulation, +20-30% yield from root temp stability) -> T3 Apex (diamond/graphene, Carbon Infinity Loop closure); scaling=household 1-4 towers -> community 10-50 -> commercial node 100-500 -> global; sites=['indoor', 'vertical', 'rooftop']; license=CC-BY-SA | open-source; energy_note=derived: 100 W x 8760 h / 15-25 kg = 35-58 kWh/kg = 126-210 MJ/kg; [MODELLED] until MEASURED (AEFRI gate)
+- **Phyto-Sterile Agriculture (HTC-fed regenerative production)** — crop_yield_gain_pct=32; pest_reduction_pct=82; disease_reduction_pct=73; som_gain_pct_yr=0.8; water_reduction_pct=26
 
 **Dual ecologies:** cork montado (biodiversity hotspot, tree never felled) · Cape reeds
 (invasive-clearing -> fynbos restoration) · algae (CO2-sequestration feed) · straw (residue
@@ -141,6 +145,10 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `lignin_recovery` | Lignin Recovery (biorefinery valorization) | [LITERATURE] | black liquor / biorefinery side-stream | lignin resin | 1.0-5.0 MJ/kg |
 | `bio_graphene_flash` | Flash Bio-Graphene (Joule-heating from biochar) | [BLUEPRINT] | biochar | bio-graphene (3-5% DLGC constituent) | 5.0-15.0 MJ/kg |
 | `cil_grow_unit` | CIL Grow Unit (smallest complete replicable diamond grower) | [BLUEPRINT] | atmospheric CO2 (DAC cartridge), water (electrolysis), renewable power (PV + molten-salt buffer) | CVD diamond -> DAC_CAPTURE credits (surplus) | 1026.0 MJ/kg |
+| `bio_methane_purification` | Bio-Methane Production & Purification (CVD-grade) | [BLUEPRINT] | crop residues, manure, food waste (from agricultural cycle) | CVD-grade bio-methane (>=99.5% CH4) -> CO2 byproduct (captured: greenhouse / mineralization) | -6.0 MJ/kg |
+| `cvd_diamond_cascade` | CVD Diamond Growth (5-stage production cascade) | [BLUEPRINT] | CVD-grade bio-methane | gem-quality rough -> optical/electronic grade -> industrial abrasive | 1026.0 MJ/kg |
+| `graphene_laser_ablation` | Graphene Manufacturing Hub (UV femtosecond laser ablation) | [BLUEPRINT] | sub-grade diamond particles (cascade stage 5) | monolayer graphene -> few-layer graphene (FLG) -> graphene oxide (GO) | 0.0 MJ/kg |
+| `htc_system` | Hydrothermal Carbonization (Phyto-Shield HTC) | [SPEC] | wet biomass — Stream A nutrient base (alfalfa, clover, comfrey, hemp, azolla) 60%, Stream B defense matrix (neem, pyrethrum, chili, garlic, marigold) 40% | hydrochar / Phyto-Shield (25-35%) -> bioliquor / Defense Nectar (40-50%) -> gas phase CO2 (15-25%, to CHP/greenhouse) | 1.9 MJ/kg |
 
 | id | manufacture process | status | inputs | outputs | energy |
 |---|---|---|---|---|---|
@@ -166,9 +174,11 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `dlgc` | DLGC (Densified Ligno-Cellulosic Graphene Composite) | aequvivum structural frames; Bio-Fuse joints; scaffold members; 100+ yr load-bearing structure |
 | `eucalyptus_timber` | Eucalyptus Timber (managed rotation) | CLT/glulam feedstock; evermateria stream 6 (furniture, bio-char, oils, credits); D7 woodwork |
 | `flax_fiber` | Flax (Linseed) Bast Fiber | flax-bio-epoxy structural skins (M3.2); hemp-flax bio-resin (A6); linseed bio-polyol co-product |
+| `graphene_laser` | Laser-Ablation Graphene (from CIL diamond waste) | monolayer graphene (electronics, sensors) [SPEC corpus price table]; few-layer graphene (composites, coatings); graphene oxide / rGO (filtration, energy storage); graphene powder (industrial additives) |
 | `hemp_fiber` | Industrial Hemp Bast Fiber | DLGC fiber feedstock; hempcrete; Hemp-PLA (M3.1); crack-bridging (AEQUBLOCK) |
 | `hemp_hurd` | Industrial Hemp Hurd (shiv) | hempcrete mass; AEQUBLOCK T2 (15% hurd + 3% fiber); biochar feedstock |
 | `hempcrete` | Hempcrete (hemp hurd + lime binder) | carbon-negative wall mass; insulation + thermal mass (aequcity materials list); AEQUBLOCK T1 companion |
+| `hydrochar` | Hydrochar (Phyto-Shield, HTC sterile soil carbon) | soil amendment (5-10 t/ha yr 1, 2-4 t/ha maintenance) — +0.8% SOM/yr; BIOCHAR_STORAGE carbon credits (2.0 t CO2e/t, on-chain verified); carbon sequestration (100+ yr stable carbon) |
 | `mycelium_composite` | Mycelium Composite (grown-to-shape) | insulation; EMI shielding (UMAGCONNEC); +3% tensile binder (AEQUBLOCK); sensor-mesh substrate (hoverboard) |
 | `natural_rubber` | Natural Rubber (Hevea latex) | Manufactory belt drives (100% bio-based); seals; vibration mounts |
 | `pha` | PHA (polyhydroxyalkanoate) | marine-biodegradable tier; XEROSIL fungal-trigger companion; packaging film |
@@ -188,6 +198,7 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `biochar` | replenishable | [SPEC] | 2.57 | 4.0 | -2.23 | -4.33 |
 | `dlgc` | replenishable | [SPEC] | 1.82 | 4.4 | -1.94 | -4.04 |
 | `cork` | replenishable | [LITERATURE] | 1.83 | 1.5 | -1.62 | -3.72 |
+| `hydrochar` | replenishable | [SPEC] | 1.83 | 6.3 | -1.52 | -3.62 |
 | `clt_glulam` | replenishable | [BLUEPRINT] | 1.80 | 4.5 | -1.44 | -3.54 |
 | `eucalyptus_timber` | replenishable | [LITERATURE] | 1.76 | 3.0 | -1.44 | -3.54 |
 | `poplar_timber` | replenishable | [LITERATURE] | 1.76 | 3.0 | -1.44 | -3.54 |
@@ -209,11 +220,14 @@ valorization, zero new land). *The replenishable program buys restoration with i
 | `pha` | replenishable | [LITERATURE] | 2.02 | 60.0 | +0.59 | -1.51 |
 | `steel_eaf_recycled` | baseline | [LITERATURE] | 0.00 | 10.0 | +0.60 | -1.50 |
 | `aluminum_recycled` | baseline | [LITERATURE] | 0.00 | 15.0 | +1.20 | -0.90 |
+| `glass_soda_lime` | baseline | [LITERATURE] | 0.00 | 14.0 | +1.20 | -0.90 |
 | `pp` | baseline | [LITERATURE] | 0.00 | 73.0 | +1.90 | -0.20 |
 | `steel_virgin` | baseline | [LITERATURE] | 0.00 | 25.0 | +2.10 | +0.00 |
 | `pvc` | baseline | [LITERATURE] | 0.00 | 70.0 | +2.40 | +0.30 |
+| `pc_polycarbonate` | baseline | [LITERATURE] | 0.00 | 32.0 | +6.50 | +4.40 |
 | `aluminum_virgin` | baseline | [LITERATURE] | 0.00 | 200.0 | +12.00 | +9.90 |
 | `cil_diamond` | replenishable | [SPEC] | 3.67 | 1026.0 | +16.85 | +14.75 |
+| `graphene_laser` | replenishable | [SPEC] | 3.67 | 1425.0 | +26.67 | +24.57 |
 
 *Grid: renewable-dedicated (0.02 kg CO2/MJ). Uptake: composition-weighted stoichiometry*
 *(C x 44/12) x permanence. Baselines: published literature overrides.*
@@ -354,6 +368,7 @@ every resource for a demand figure, computed live from the registries.
 | id | score | grade | strongest pillar | weakest pillar |
 |---|---|---|---|---|
 | `biochar` | 95.0 | **A+** | sustainable_materials | local_production |
+| `hydrochar` | 93.5 | **A+** | sustainable_materials | renewable_energy |
 | `cork` | 92.5 | **A+** | sustainable_materials | renewable_energy |
 | `dlgc` | 91.0 | **A+** | sustainable_materials | local_production |
 | `mycelium_composite` | 89.5 | **A** | sustainable_materials | longevity |
@@ -370,6 +385,7 @@ every resource for a demand figure, computed live from the registries.
 | `eucalyptus_timber` | 81.0 | **A** | sustainable_materials | renewable_energy |
 | `poplar_timber` | 80.0 | **A** | sustainable_materials | renewable_energy |
 | `straw_cellulose` | 80.0 | **A** | sustainable_materials | longevity |
+| `graphene_laser` | 80.0 | **A** | zero_waste | renewable_energy |
 | `transparent_wood` | 77.5 | **B** | sustainable_materials | renewable_energy |
 | `pha` | 71.5 | **B** | sustainable_materials | longevity |
 | `natural_rubber` | 69.5 | **C** | sustainable_materials | renewable_energy |
@@ -389,6 +405,8 @@ every resource for a demand figure, computed live from the registries.
 | `spider_silk` | industrial-scale production UNVALIDATED (corpus-flagged) | 4x3 | **HIGH** |
 | `cil_diamond` | 285 kWh/kg energy floor — a power program first (0.13 MW nameplate per t/yr) | 3x4 | **HIGH** |
 | `transparent_wood` | delignification liquor stream must close (lignin -> DLGC resin feedstock, chemicals recovered) | 3x4 | **HIGH** |
+| `hydrochar` | feedstock contaminants (heavy metals concentrate in char at 200-250C) | 3x4 | **HIGH** |
+| `graphene_laser` | laser electricity per kg NOT QUANTIFIED in corpus (Module 3 gives laser specs, not energy intensity) — MEASURED gate required | 4x3 | **HIGH** |
 | `bamboo` | plantation lead time 5-7 yr | 3x3 | **MEDIUM** |
 | `eucalyptus_timber` | water demand must be sited responsibly | 3x3 | **MEDIUM** |
 | `clt_glulam` | building-code approval pathways | 3x3 | **MEDIUM** |
@@ -409,12 +427,12 @@ every resource for a demand figure, computed live from the registries.
 
 ```json
 {"efemat_registry_summary": {
-  "materials": 29,
-  "replenishables": 22,
-  "baselines": 7,
-  "processes": 27,
-  "cultivation": 12,
-  "generation": 8,
+  "materials": 33,
+  "replenishables": 24,
+  "baselines": 9,
+  "processes": 32,
+  "cultivation": 13,
+  "generation": 12,
   "manufacture": 7,
   "validation_errors": 0
 }}
@@ -475,6 +493,7 @@ sky) grow toward seven source classes.
 | lignin_uv_absorber | T2 | waste_stream | extraction | UV absorbance spectrum + yellowing reduction (delta-b* colorimetry) on infiltrated panels vs control at 1000 h accelerated weathering |
 | ricehusk_silica | T2 | waste_stream | controlled_combustion | silica purity + combustion energy balance at pilot |
 | salicornia | T2 | saline_field | agronomy | yield under full seawater irrigation at pilot plot |
+| transparent_bamboo | T2 | field | extraction | panel-scale delignified-bamboo infiltration - transmittance >=80%, tensile >=100 MPa on full culm-section panels, 1000 h UV weathering vs transparent-wood control |
 | tw_aerogel | T2 | waste_stream | controlled_combustion | thermal conductivity + optical transmittance on a 100 cm2 aerogel-infiltrated panel |
 
 *Tier 1 opens new source classes/routes with direct corpus hooks: kelp (ocean farmplex,
