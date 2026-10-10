@@ -303,3 +303,72 @@ tensile ≥100 MPa full-culm panels, 1000 h UV vs TW control. Carries no LCA num
 - The renewable_energy pillar (6/10) is the weakest: the 8–25 MJ/kg
   delignification+infiltration energy is a *measurement* problem — no pathway moves
   a seed (F20).
+
+### §XII.6 — Cost crossover + loop ceiling (suite v5 sweep, 2026-10-09)
+
+- **Cost:** TW drops below PC at **program year 4** and below glass at **year 10**;
+  by year 20 TW is **15× cheaper than PC, 6.2× cheaper than glass** (EFE learning
+  vs flat commodity curves — study #11 §XIII.1).
+- **Loop ceiling:** TW's recovery 0.6 caps secondary supply at 60% — a 100 kt/yr
+  program needs 40 kt/yr of new feedstock at steady state. Glass's ceiling is 75%
+  (τ 2 yr), PC's 30% (τ 10 yr). The 40 kt/yr feedstock need is exactly what the
+  §XII.3 lignin loop and the F23 fertility loop exist to feed — the program's loops
+  are sized to its own ceiling.
+
+### §XII.7 — The stiffness gap is structural; the crossover is robust (v6)
+
+- **Stiffness:** TW would need E ≥ 13.6 GPa at ρ 1.1 to match glass's E^½/ρ 3.35 —
+  beyond the pathway library (~8 GPa). Densification *lowers* the specific-stiffness
+  index (density outruns √E) while raising absolute strength — the strength and
+  stiffness levers move in opposite directions. Deflection-limited spans stay glass;
+  **framing compensates — now proven, not assumed** (study #11 §XIV.2).
+- **Crossover robustness:** TW's price crossover survives incumbent learning —
+  glass at −2%/yr still crossed at year 10; only an unprecedented −5%/yr pushes it
+  to year 16 (study #11 §XIV.3).
+- **The program ledger** (study #11 §XIV.5): 100 kt/yr panels → 40 kt/yr new
+  feedstock (the fertility loop's own output) + 45–63 kt/yr DLGC co-feed +
+  3–4.5 kt hydrochar + 4.5–6.75 kt Defense Nectar → **−106,500 t CO₂e/yr program
+  total**.
+
+### §XII.8 — Fire-load reframe + feedstock mix bounds (v7)
+
+- **Fire load (declared 5 mm panel, [LITERATURE] calorific values):** TW **99 MJ/m²**
+  vs PC **192 MJ/m²** vs glass **0**. The AEQUACROP incumbent (recycled-PC double-wall)
+  carries **twice TW's fire load** — the PC→TW substitution *improves* fire safety 2×,
+  and TW's fire gap is vs **glass only**. `fr_bio_resin`'s UL94 gate targets glass-parity;
+  the replacement case is already an improvement (study #11 §XV, F34).
+- **Feedstock mix bounds (the 40 kt/yr virgin need, F26):** poplar SRC 2,667–5,000 ha
+  vs bamboo culm sections 1,333–2,000 ha — **bamboo halves the land**. Caveat `[SPEC]`:
+  TW feedstock is offcut+thinning streams (no plantation expansion); these are the
+  dedicated-crop bounds. `transparent_bamboo` (F19, MEASURED-gated) opens the bamboo
+  bound (F35).
+- **The resin inversion (F32):** DLGC's 437 kt/yr resin demand would need 1.8–2.6 Mt/yr
+  of TW panels — 18–26× this program. The glazing line is a *contribution* to the
+  flagship's resin mix (with `lignin_recovery` and other streams), not its sole supply.
+
+### §XII.9 — The lifetime reframe + the convergence (v8)
+
+- **Per-service-window, not per-kg:** over 60 yr, PC needs 2.4–6.0 installations
+  (+15.6 to +39.0 kg CO₂/kg-eq, $29–$72) vs TW's one (−0.99, $0.80 at yr-20 prices).
+  **The carbon gap widens from 7.4× to 16–39×** — and even if TW needs 25-yr
+  replacement (gate fails), it stays 7× better (F36, study #11 §XVI.1).
+- **Glass's one pillar win is longevity** (9 vs 7) — TW wins 5, ties 1 of 7. The
+  single honest advantage is exactly the unproven service life (F37).
+- **The convergence:** the 1000 h weathering gate is simultaneously TW's best carbon
+  lever (F20), glass's only defending pillar (F37), and the denominator of every
+  lifetime comparison (F36). One experiment, three findings riding on it.
+- **Third program flow:** 2,200–29,733 ha-yr Defense Nectar surplus beyond the
+  program's own stands → `phyto_sterile_agriculture` (F38).
+
+### §XII.10 — The EoL closure + the product unit (v9)
+
+- **The EoL closure (F40):** the regrind loop's 40 kt/yr loss routes to `htc_system`
+  (12 kt hydrochar + 18 kt bioliquor + 10 kt gas). **Regrind 60% + HTC 40% = 100%
+  program closure** — the F23 infrastructure catches exactly what the F26 ceiling
+  loses. The make-up need was never a loss; it is the HTC feed stream.
+- **The product unit (F41):** 1 AEQUACROP grow-core = 0.75 m² = **4.12 kg TW**,
+  replacing a $6 reclaimed-PC sheet. TW crosses the sheet price at year 18; per
+  service window PC $14–36 vs TW $3.30. 100 kt/yr = 24.2M grow-cores/yr. **+0–10%
+  more PAR** than the PC it replaces, plus diffuse light.
+- **The aerogel gate sharpened (F42):** λ ≤ 0.04 W/mK at ≥80% transmittance —
+  derived from the dossier's own PC-multiwall baseline; the gate now has its number.
